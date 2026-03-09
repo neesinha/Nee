@@ -1,175 +1,257 @@
- Nee-listening-space<!DOCTYPE html>
-<html lang="en">
+ Nee-listening-space
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Nee Listening Space</title>
+
 <style>
-  body, html {margin:0; padding:0; font-family: Arial, sans-serif;}
-  body {background: linear-gradient(120deg, #ff9de3, #9a67ea, #6ec1ff); color: #fff;}
 
-  /* Landing page */
-  #landing {
-    display:flex; flex-direction: column; align-items:center; justify-content:center;
-    height:100vh; text-align:center;
-    background: linear-gradient(135deg, #6ec1ff, #9a67ea, #ff9de3);
-  }
-  #landing img {width:180px; border-radius:15px; margin-bottom:20px;}
-  #landing h1 {font-size:3em; margin:10px;}
-  #landing p {max-width:700px; font-size:1.2em; margin:10px auto;}
-  .btn-primary {padding:15px 35px; border:none; border-radius:12px; background:linear-gradient(90deg,#ff6ec7,#8e2de2); font-size:1.2em; cursor:pointer;}
-  .btn-primary:hover {opacity:0.9;}
+body{
+font-family:Arial;
+margin:0;
+background:#f4f6ff;
+}
 
-  /* Reviews section */
-  #reviews {margin-top:30px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap;}
-  .review {background: rgba(255,255,255,0.1); padding:15px; border-radius:12px; width:220px; box-shadow:0 4px 15px rgba(0,0,0,0.3);}
-  .review img {width:50px; border-radius:50%; margin-bottom:10px;}
-  .review p {font-size:0.95em;}
+header{
+background:linear-gradient(135deg,#6a8dff,#8ec5ff);
+color:white;
+text-align:center;
+padding:70px 20px;
+}
 
-  /* Booking section */
-  #booking {display:none; padding:40px 20px; max-width:800px; margin:auto;}
-  #booking h2 {text-align:center; margin-bottom:20px;}
-  label {display:block; margin:10px 0 5px;}
-  input, textarea {width:100%; padding:10px; border-radius:8px; border:none;}
-  button {margin-top:15px; background:linear-gradient(90deg,#ff6ec7,#8e2de2); padding:12px 25px; border-radius:10px; font-weight:bold; cursor:pointer; border:none;}
-  button:hover {opacity:0.9;}
-  .price-option {display:flex; align-items:center; gap:10px; margin:5px 0;}
+h1{
+margin:0;
+font-size:40px;
+}
 
-  /* Admin client table */
-  table {width:100%; border-collapse:collapse; margin-top:15px;}
-  th, td {border:1px solid #fff; padding:10px; text-align:left;}
-  th {background: rgba(0,0,0,0.3);}
-  #clientListSection {display:none; margin-top:20px;}
+section{
+padding:50px 20px;
+text-align:center;
+}
+
+button{
+padding:12px 25px;
+background:#4a6cff;
+color: purple;
+border:none;
+border-radius:25px;
+cursor:pointer;
+}
+
+.images img{
+width:260px;
+margin:10px;
+border-radius:10px;
+}
+
+.review{
+background:white;
+padding:20px;
+margin:20px auto;
+max-width:500px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.booking{
+background:#eef2ff;
+}
+
+.price-box{
+text-align:left;
+max-width:300px;
+margin:auto;
+}
+
+input,textarea{
+padding:10px;
+width:250px;
+margin:5px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+.admin-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:black;
+color:white;
+padding:10px;
+cursor:pointer;
+border-radius:6px;
+}
+
+footer{
+background:#4a6cff;
+color:white;
+padding:20px;
+text-align:center;
+}
+
 </style>
+
 </head>
+
 <body>
 
-<!-- Landing Page -->
-<div id="landing">
-  <img src="a_digital_vector_logo_design_for_nee_listening_sp.png" alt="Logo">
-  <h1>Nee Listening Space</h1>
-  <p>Jo dil se nikle, woh baatein share karein. Aaiye humse judiye aur apne mann ki baat share karein, bina judge hue aur bina tension ke.</p>
-  <div id="reviews">
-    <div class="review">
-      <img src="https://i.pravatar.cc/50?img=1" alt="reviewer">
-      <p>"Yah program ne mere mann ko bahut shanti di!"</p>
-    </div>
-    <div class="review">
-      <img src="https://i.pravatar.cc/50?img=2" alt="reviewer">
-      <p>"Main apni baat bina kisi tension ke share kar paayi."</p>
-    </div>
-    <div class="review">
-      <img src="https://i.pravatar.cc/50?img=3" alt="reviewer">
-      <p>"Nee Listening Space sach me helpful hai."</p>
-    </div>
-  </div>
-  <button class="btn-primary" onclick="showBooking()">Book Now</button>
+
+<header>
+
+<h1 id="title">Nee Listening Space</h1>
+
+<p id="desc">
+A safe space where someone listens to you without judgement.
+Share your feelings, stress or problems freely.
+</p>
+
+<button onclick="scrollToBooking()">Book Session</button>
+
+</header>
+
+
+<section>
+
+<h2>Peaceful Listening Environment</h2>
+
+<div class="images">
+
+<img src="https://images.unsplash.com/photo-1516307365426-bea591f05011">
+
+<img src="https://images.unsplash.com/photo-1493836512294-502baa1986e2">
+
 </div>
 
-<!-- Booking Page -->
-<div id="booking">
-  <h2>Book Your Session</h2>
-  <form id="bookingForm">
-    <label for="clientName">Name:</label>
-    <input type="text" id="clientName" required>
-    
-    <label for="clientPhone">Mobile Number:</label>
-    <input type="tel" id="clientPhone" required>
-    
-    <label for="clientAddress">Address:</label>
-    <textarea id="clientAddress" rows="2" required></textarea>
-    
-    <label for="bookingDate">Booking Date:</label>
-    <input type="date" id="bookingDate" required>
-    
-    <label for="bookingTime">Booking Time:</label>
-    <input type="time" id="bookingTime" required>
+</section>
 
-    <label>Price Options:</label>
-    <div class="price-option"><input type="checkbox" id="option1" checked> ₹199 - 30 min</div>
-    <div class="price-option"><input type="checkbox" id="option2"> ₹399 - 1 hour</div>
 
-    <label>Payment UPI: <strong>nishitasinha5-1@okicici</strong></label>
+<section>
 
-    <button type="submit">Book & Pay</button>
-  </form>
+<h2>What People Say</h2>
 
-  <h2>Admin Login</h2>
-  <form id="adminForm">
-    <label for="adminPass">Password:</label>
-    <input type="password" id="adminPass" placeholder="Enter password">
-    <button type="submit">Login</button>
-  </form>
-
-  <section id="clientListSection">
-    <h2>Clients Booking List</h2>
-    <table id="clientTable">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Phone</th>
-          <th>Address</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Price Option</th>
-          <th>Paid</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </section>
+<div class="review">
+“Talking here helped me calm my mind. Nee listens very patiently.” – Rahul
 </div>
+
+<div class="review">
+“I shared my stress and felt much lighter afterwards.” – Priya
+</div>
+
+<div class="review">
+“A truly peaceful place to express your feelings.” – Aman
+</div>
+
+</section>
+
+
+<section id="booking" class="booking">
+
+<h2>Book Your Session</h2>
+
+<form>
+
+<input placeholder="Your Name"><br>
+
+<textarea placeholder="Write your problem"></textarea>
+
+<br><br>
+
+<div class="price-box">
+
+<b>Select Session</b><br>
+
+<label><input type="checkbox"> 10 Minutes – ₹49</label><br>
+
+<label><input type="checkbox"> 20 Minutes – ₹99</label><br>
+
+<label><input type="checkbox"> 30 Minutes – ₹149</label><br>
+
+<label><input type="checkbox"> 1 Hour Deep Listening – ₹299</label>
+
+</div>
+
+<br>
+
+<p>UPI Payment: <b id="upi">nishitasinha5-1@okicici</b></p>
+
+<img src="qr.png" width="150">
+
+<br><br>
+
+<button type="button" onclick="confirmBooking()">Confirm Booking</button>
+
+<br><br>
+
+<a href="https://wa.me/91XXXXXXXXXX">
+
+<button type="button">Book via WhatsApp</button>
+
+</a>
+
+</form>
+
+</section>
+
+
+<footer>
+
+© Nee Listening Space
+
+</footer>
+
+
+<div class="admin-btn" onclick="adminPanel()">
+Admin
+</div>
+
 
 <script>
-let bookings = [];
 
-function showBooking(){
-  document.getElementById('landing').style.display='none';
-  document.getElementById('booking').style.display='block';
+function scrollToBooking(){
+
+document.getElementById("booking").scrollIntoView()
+
 }
 
-document.getElementById('bookingForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  const name = document.getElementById('clientName').value;
-  const phone = document.getElementById('clientPhone').value;
-  const address = document.getElementById('clientAddress').value;
-  const date = document.getElementById('bookingDate').value;
-  const time = document.getElementById('bookingTime').value;
-  const option = document.getElementById('option2').checked ? '₹399 - 1 hour' : '₹199 - 30 min';
-  const paid = 'Yes'; // Direct UPI assumption
+function confirmBooking(){
 
-  bookings.push({name, phone, address, date, time, option, paid});
-  alert('Booking successful! Payment via UPI: nishitasinha5-1@okicici');
-  document.getElementById('bookingForm').reset();
-});
+alert("Please send payment screenshot on WhatsApp to confirm booking.")
 
-document.getElementById('adminForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  const pass = document.getElementById('adminPass').value;
-  if(pass === 'manyasinha15'){
-    document.getElementById('clientListSection').style.display = 'block';
-    populateTable();
-  } else {
-    alert('Wrong password!');
-  }
-});
-
-function populateTable(){
-  const tbody = document.querySelector('#clientTable tbody');
-  tbody.innerHTML = '';
-  bookings.forEach(b => {
-    const row = document.createElement('tr');
-    row.innerHTML = `<td>${b.name}</td>
-                     <td>${b.phone}</td>
-                     <td>${b.address}</td>
-                     <td>${b.date}</td>
-                     <td>${b.time}</td>
-                     <td>${b.option}</td>
-                     <td>${b.paid}</td>`;
-    tbody.appendChild(row);
-  });
 }
+
+function adminPanel(){
+
+let pass=prompt("Enter Admin Password")
+
+if(pass==="1234"){
+
+let newTitle=prompt("Change Title",document.getElementById("title").innerText)
+
+let newDesc=prompt("Change Description",document.getElementById("desc").innerText)
+
+let newUpi=prompt("Change UPI",document.getElementById("upi").innerText)
+
+document.getElementById("title").innerText=newTitle
+
+document.getElementById("desc").innerText=newDesc
+
+document.getElementById("upi").innerText=newUpi
+
+alert("Website Updated")
+
+}else{
+
+alert("Wrong Password")
+
+}
+
+}
+
 </script>
+
 
 </body>
 </html>
