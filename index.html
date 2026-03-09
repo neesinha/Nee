@@ -131,3 +131,644 @@ Book Listening Session
 
 </body>
 </html>
+<<!DOCTYPE html>
+<html>
+<head>
+
+<title>Book Session</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f3f5ff;
+text-align:center;
+}
+
+h1{
+color:#4a6cff;
+}
+
+form{
+background:white;
+padding:25px;
+max-width:420px;
+margin:auto;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+input,select{
+width:90%;
+padding:10px;
+margin:8px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+padding:12px 25px;
+background:#4a6cff;
+color:white;
+border:none;
+border-radius:25px;
+cursor:pointer;
+}
+
+.price{
+text-align:left;
+margin-left:20px;
+}
+
+.admin{
+position:fixed;
+bottom:20px;
+right:20px;
+background:black;
+color:white;
+padding:10px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Book Listening Session</h1>
+
+<p>Choose your time and share your feelings</p>
+
+<form onsubmit="saveBooking(); return false;">
+
+<input id="name" placeholder="Your Name" required>
+
+<input id="address" placeholder="Address">
+
+<input type="date" id="date" required>
+
+<select id="time">
+<option>10:00 AM</option>
+<option>12:00 PM</option>
+<option>3:00 PM</option>
+<option>6:00 PM</option>
+</select>
+
+
+<div class="price">
+
+<b>Select Session</b><br>
+
+<input type="checkbox"> 10 Minutes – ₹49<br>
+
+<input type="checkbox"> 20 Minutes – ₹99<br>
+
+<input type="checkbox"> 30 Minutes – ₹149<br>
+
+<input type="checkbox"> 1 Hour – ₹299<br>
+
+</div>
+
+
+<p>UPI ID: <b>yourupi@okupi</b></p>
+
+<img src="qr.png" width="150">
+
+<br><br>
+
+<button type="submit">Confirm Booking</button>
+
+</form>
+
+
+<div class="admin" onclick="adminPanel()">
+Admin
+</div>
+
+
+<script>
+
+function saveBooking(){
+
+let name=document.getElementById("name").value
+let date=document.getElementById("date").value
+let time=document.getElementById("time").value
+
+let booking=name+" | "+date+" | "+time
+
+let list=JSON.parse(localStorage.getItem("bookings")||"[]")
+
+list.push(booking)
+
+localStorage.setItem("bookings",JSON.stringify(list))
+
+alert("Booking saved. Send payment screenshot on WhatsApp.")
+
+}
+
+
+function adminPanel(){
+
+let pass=prompt("Enter Admin Password")
+
+if(pass==="manyasinha"){
+
+let list=JSON.parse(localStorage.getItem("bookings")||"[]")
+
+alert(list.join("\n"))
+
+}else{
+
+alert("Wrong password")
+
+}
+
+}
+
+</script>
+
+</body>
+<html<!DOCTYPE html>
+<html>
+<head>
+
+<title>Book Session</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f3f5ff;
+text-align:center;
+}
+
+h1{
+color:#4a6cff;
+}
+
+form{
+background:white;
+padding:25px;
+max-width:420px;
+margin:auto;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+input,select{
+width:90%;
+padding:10px;
+margin:8px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+padding:12px 25px;
+background:#4a6cff;
+color:white;
+border:none;
+border-radius:25px;
+cursor:pointer;
+}
+
+.price{
+text-align:left;
+margin-left:20px;
+}
+
+.admin{
+position:fixed;
+bottom:20px;
+right:20px;
+background:black;
+color:white;
+padding:10px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Book Listening Session</h1>
+
+<p>Choose your time and share your feelings</p>
+
+<form onsubmit="saveBooking(); return false;">
+
+<input id="name" placeholder="Your Name" required>
+
+<input id="address" placeholder="Address">
+
+<input type="date" id="date" required>
+
+<select id="time">
+<option>10:00 AM</option>
+<option>12:00 PM</option>
+<option>3:00 PM</option>
+<option>6:00 PM</option>
+</select>
+
+
+<div class="price">
+
+<b>Select Session</b><br>
+
+<input type="checkbox"> 10 Minutes – ₹49<br>
+
+<input type="checkbox"> 20 Minutes – ₹99<br>
+
+<input type="checkbox"> 30 Minutes – ₹149<br>
+
+<input type="checkbox"> 1 Hour – ₹299<br>
+
+</div>
+
+
+<p>UPI ID: <b>yourupi@okupi</b></p>
+
+<img src="qr.png" width="150">
+
+<br><br>
+
+<button type="submit">Confirm Booking</button>
+
+</form>
+
+
+<div class="admin" onclick="adminPanel()">
+Admin
+</div>
+
+
+<script>
+
+function saveBooking(){
+
+let name=document.getElementById("name").value
+let date=document.getElementById("date").value
+let time=document.getElementById("time").value
+
+let booking=name+" | "+date+" | "+time
+
+let list=JSON.parse(localStorage.getItem("bookings")||"[]")
+
+list.push(booking)
+
+localStorage.setItem("bookings",JSON.stringify(list))
+
+alert("Booking saved. Send payment screenshot on WhatsApp.")
+
+}
+
+
+function adminPanel(){
+
+let pass=prompt("Enter Admin Password")
+
+if(pass==="manyasinha"){
+
+let list=JSON.parse(localStorage.getItem("bookings")||"[]")
+
+alert(list.join("\n"))
+
+}else{
+
+alert("Wrong password")
+
+}
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+
+<title>Book Session</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f3f5ff;
+text-align:center;
+}
+
+h1{
+color:#4a6cff;
+}
+
+form{
+background:white;
+padding:25px;
+max-width:420px;
+margin:auto;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+input,select{
+width:90%;
+padding:10px;
+margin:8px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+padding:12px 25px;
+background:#4a6cff;
+color:white;
+border:none;
+border-radius:25px;
+cursor:pointer;
+}
+
+.price{
+text-align:left;
+margin-left:20px;
+}
+
+.admin{
+position:fixed;
+bottom:20px;
+right:20px;
+background:black;
+color:white;
+padding:10px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Book Listening Session</h1>
+
+<p>Choose your time and share your feelings</p>
+
+<form onsubmit="saveBooking(); return false;">
+
+<input id="name" placeholder="Your Name" required>
+
+<input id="address" placeholder="Address">
+
+<input type="date" id="date" required>
+
+<select id="time">
+<option>10:00 AM</option>
+<option>12:00 PM</option>
+<option>3:00 PM</option>
+<option>6:00 PM</option>
+</select>
+
+
+<div class="price">
+
+<b>Select Session</b><br>
+
+<input type="checkbox"> 10 Minutes – ₹49<br>
+
+<input type="checkbox"> 20 Minutes – ₹99<br>
+
+<input type="checkbox"> 30 Minutes – ₹149<br>
+
+<input type="checkbox"> 1 Hour – ₹299<br>
+
+</div>
+
+
+<p>UPI ID: <b>yourupi@okupi</b></p>
+
+<img src="qr.png" width="150">
+
+<br><br>
+
+<button type="submit">Confirm Booking</button>
+
+</form>
+
+
+<div class="admin" onclick="adminPanel()">
+Admin
+</div>
+
+
+<script>
+
+function saveBooking(){
+
+let name=document.getElementById("name").value
+let date=document.getElementById("date").value
+let time=document.getElementById("time").value
+
+let booking=name+" | "+date+" | "+time
+
+let list=JSON.parse(localStorage.getItem("bookings")||"[]")
+
+list.push(booking)
+
+localStorage.setItem("bookings",JSON.stringify(list))
+
+alert("Booking saved. Send payment screenshot on WhatsApp.")
+
+}
+
+
+function adminPanel(){
+
+let pass=prompt("Enter Admin Password")
+
+if(pass==="manyasinha"){
+
+let list=JSON.parse(localStorage.getItem("bookings")||"[]")
+
+alert(list.join("\n"))
+
+}else{
+
+alert("Wrong password")
+
+}
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+
+<title>Book Session</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f3f5ff;
+text-align:center;
+}
+
+h1{
+color:#4a6cff;
+}
+
+form{
+background:white;
+padding:25px;
+max-width:420px;
+margin:auto;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+input,select{
+width:90%;
+padding:10px;
+margin:8px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+padding:12px 25px;
+background:#4a6cff;
+color:white;
+border:none;
+border-radius:25px;
+cursor:pointer;
+}
+
+.price{
+text-align:left;
+margin-left:20px;
+}
+
+.admin{
+position:fixed;
+bottom:20px;
+right:20px;
+background:black;
+color:white;
+padding:10px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Book Listening Session</h1>
+
+<p>Choose your time and share your feelings</p>
+
+<form onsubmit="saveBooking(); return false;">
+
+<input id="name" placeholder="Your Name" required>
+
+<input id="address" placeholder="Address">
+
+<input type="date" id="date" required>
+
+<select id="time">
+<option>10:00 AM</option>
+<option>12:00 PM</option>
+<option>3:00 PM</option>
+<option>6:00 PM</option>
+</select>
+
+
+<div class="price">
+
+<b>Select Session</b><br>
+
+<input type="checkbox"> 10 Minutes – ₹49<br>
+
+<input type="checkbox"> 20 Minutes – ₹99<br>
+
+<input type="checkbox"> 30 Minutes – ₹149<br>
+
+<input type="checkbox"> 1 Hour – ₹299<br>
+
+</div>
+
+
+<p>UPI ID: <b>yourupi@okupi</b></p>
+
+<img src="qr.png" width="150">
+
+<br><br>
+
+<button type="submit">Confirm Booking</button>
+
+</form>
+
+
+<div class="admin" onclick="adminPanel()">
+Admin
+</div>
+
+
+<script>
+
+function saveBooking(){
+
+let name=document.getElementById("name").value
+let date=document.getElementById("date").value
+let time=document.getElementById("time").value
+
+let booking=name+" | "+date+" | "+time
+
+let list=JSON.parse(localStorage.getItem("bookings")||"[]")
+
+list.push(booking)
+
+localStorage.setItem("bookings",JSON.stringify(list))
+
+alert("Booking saved. Send payment screenshot on WhatsApp.")
+
+}
+
+
+function adminPanel(){
+
+let pass=prompt("Enter Admin Password")
+
+if(pass==="manyasinha"){
+
+let list=JSON.parse(localStorage.getItem("bookings")||"[]")
+
+alert(list.join("\n"))
+
+}else{
+
+alert("Wrong password")
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
