@@ -1,6 +1,7 @@
 backend:
   name: github
-  repo: neesinha.github.io/nee
+  repo: neesinha/Nee
+  branch:main
 
 media_folder: "images"
 public_folder: "/images"
