@@ -1,95 +1,71 @@
- Nee-listening-space
+nee listening space 
 <!DOCTYPE html>
 <html>
 <head>
+<title>Nee Listening Space</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Nee Listening Space</title>
 
 <style>
 
 body{
-font-family:Arial;
 margin:0;
+font-family:Arial;
 background:#f4f6ff;
+text-align:center;
 }
 
 header{
 background:linear-gradient(135deg,#6a8dff,#8ec5ff);
-color:white;
-text-align:center;
-padding:70px 20px;
-}
-
-h1{
-margin:0;
-font-size:40px;
-}
-
-section{
-padding:50px 20px;
-text-align:center;
-}
-
-button{
-padding:12px 25px;
-background:#4a6cff;
 color: purple;
+padding:90px 40px;
+}
+
+.logo{
+font-size:60px;
+font-weight:bold;
+}
+
+.slogan{
+font-size:40px;
+margin-top:15px;
+}
+
+.bookbtn{
+margin-top:25px;
+padding:15px 35px;
+background:green;
+color:#4a6cff;
 border:none;
-border-radius:25px;
+border-radius:30px;
+font-size:18px;
 cursor:pointer;
+}
+
+.images{
+margin:40px;
 }
 
 .images img{
 width:260px;
+border-radius:12px;
 margin:10px;
-border-radius:10px;
 }
 
 .review{
 background:white;
-padding:20px;
 margin:20px auto;
 max-width:500px;
+padding:20px;
 border-radius:10px;
-box-shadow:0 5px 10px rgba(0,0,0,0.1);
-}
-
-.booking{
-background:#eef2ff;
-}
-
-.price-box{
-text-align:left;
-max-width:300px;
-margin:auto;
-}
-
-input,textarea{
-padding:10px;
-width:250px;
-margin:5px;
-border-radius:6px;
-border:1px solid #ccc;
-}
-
-.admin-btn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:black;
-color:white;
-padding:10px;
-cursor:pointer;
-border-radius:6px;
+box-shadow:0 5px 12px rgba(0,0,0,0.1);
 }
 
 footer{
 background:#4a6cff;
-color:white;
+color: purple;
 padding:20px;
-text-align:center;
+margin-top:40px;
 }
 
 </style>
@@ -98,32 +74,28 @@ text-align:center;
 
 <body>
 
-
 <header>
 
-<h1 id="title">Nee Listening Space</h1>
+<div class="logo">🌿 Nee Listening Space</div>
 
-<p id="desc">
-A safe space where someone listens to you without judgement.
-Share your feelings, stress or problems freely.
-</p>
+<div class="slogan">“Agar aapke paas kehne ko bahut kuch hai, par sunne wala koi nahi — hum hain.”
+A peaceful place where someone truly listens to you.Agar aapko lagta hai ki koi samajh nahi pa raha…
+toh shayad aapko bas ek achha listener chahiye.”
+</div>
 
-<button onclick="scrollToBooking()">Book Session</button>
+<button class="bookbtn"
+onclick="location.href='booking.html'">
+Book Listening Session
+</button>
 
 </header>
 
 
-<section>
-
-<h2>Peaceful Listening Environment</h2>
-
-<div class="images">
+<section class="images">
 
 <img src="https://images.unsplash.com/photo-1516307365426-bea591f05011">
 
 <img src="https://images.unsplash.com/photo-1493836512294-502baa1986e2">
-
-</div>
 
 </section>
 
@@ -133,65 +105,20 @@ Share your feelings, stress or problems freely.
 <h2>What People Say</h2>
 
 <div class="review">
-“Talking here helped me calm my mind. Nee listens very patiently.” – Rahul
+“Talking here made me feel calm and understood.” – Rahul
 </div>
 
 <div class="review">
-“I shared my stress and felt much lighter afterwards.” – Priya
+“I felt lighter after sharing my thoughts.” – Priya
 </div>
 
 <div class="review">
-“A truly peaceful place to express your feelings.” – Aman
+“A safe and kind space to speak freely.” – Aman
 </div>
 
-</section>
-
-
-<section id="booking" class="booking">
-
-<h2>Book Your Session</h2>
-
-<form>
-
-<input placeholder="Your Name"><br>
-
-<textarea placeholder="Write your problem"></textarea>
-
-<br><br>
-
-<div class="price-box">
-
-<b>Select Session</b><br>
-
-<label><input type="checkbox"> 10 Minutes – ₹49</label><br>
-
-<label><input type="checkbox"> 20 Minutes – ₹99</label><br>
-
-<label><input type="checkbox"> 30 Minutes – ₹149</label><br>
-
-<label><input type="checkbox"> 1 Hour Deep Listening – ₹299</label>
-
+<div class="review">
+“Very patient and understanding listener.” – Riya
 </div>
-
-<br>
-
-<p>UPI Payment: <b id="upi">nishitasinha5-1@okicici</b></p>
-
-<img src="qr.png" width="150">
-
-<br><br>
-
-<button type="button" onclick="confirmBooking()">Confirm Booking</button>
-
-<br><br>
-
-<a href="https://wa.me/91XXXXXXXXXX">
-
-<button type="button">Book via WhatsApp</button>
-
-</a>
-
-</form>
 
 </section>
 
@@ -201,57 +128,6 @@ Share your feelings, stress or problems freely.
 © Nee Listening Space
 
 </footer>
-
-
-<div class="admin-btn" onclick="adminPanel()">
-Admin
-</div>
-
-
-<script>
-
-function scrollToBooking(){
-
-document.getElementById("booking").scrollIntoView()
-
-}
-
-function confirmBooking(){
-
-alert("Please send payment screenshot on WhatsApp to confirm booking.")
-
-}
-
-function adminPanel(){
-
-let pass=prompt("Enter Admin Password")
-
-if(pass==="1234"){
-
-let newTitle=prompt("Change Title",document.getElementById("title").innerText)
-
-let newDesc=prompt("Change Description",document.getElementById("desc").innerText)
-
-let newUpi=prompt("Change UPI",document.getElementById("upi").innerText)
-
-document.getElementById("title").innerText=newTitle
-
-document.getElementById("desc").innerText=newDesc
-
-document.getElementById("upi").innerText=newUpi
-
-alert("Website Updated")
-
-}else{
-
-alert("Wrong Password")
-
-}
-
-}
-
-</script>
-
 
 </body>
 </html>
