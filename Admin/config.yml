@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: YOUR-USERNAME/YOUR-REPOSITORY
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - file: "index.html"
+        label: "Homepage"
+        name: "homepage"
+        fields:
+          - {label: "Website Title", name: "title", widget: "string"}
+          - {label: "Slogan", name: "slogan", widget: "string"}
